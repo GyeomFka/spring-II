@@ -2,8 +2,17 @@ package hello.core.member;
 
 public class MemberServiceImpl implements MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    //private final MemberRepository memberRepository = new MemoryMemberRepository();
     //추상화에도 의존하고, 구체화에도 의존한다. -> DIP위반
+
+    /*
+    * app config 생성
+    * */
+    private final MemberRepository memberRepository; // → 추상화에만 의존한다 → DIP를 지킨다.
+
+    public MemberServiceImpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Override
     public void join(Member member) {
