@@ -19,7 +19,7 @@ public class ApplicationContextInfoTest {
     }
 
     @Test
-    void 스프링_기반_빈_말고_애플리케이션_빈만_출력하기() {
+    void 스프링의_디폴트_빈_말고_애플리케이션_빈만_출력하기() {
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
             BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefinitionName);
