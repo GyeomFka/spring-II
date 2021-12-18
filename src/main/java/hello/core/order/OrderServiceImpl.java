@@ -26,4 +26,10 @@ public class OrderServiceImpl implements OrderService{
         // SRP
         return new Order(memberId, itemName, itemPrice, discountPrice);
     }
+
+    //for singleton test
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
 }
